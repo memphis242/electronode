@@ -1,6 +1,7 @@
 # Hardware Survey
 
-The electronodes are essentially a 3-component system:
+Just like the [system-design/README.md](../system-design/README.md) mentions, the
+electronodes are made of three primary components:
 
 1. the electrode: senses the muscle electrical activity and produces a faint
                   corresponding voltage
