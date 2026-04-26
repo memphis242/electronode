@@ -1,14 +1,22 @@
 # Software
 
-This directory will hold firmware, host tools, and signal-processing code.
+This directory will hold firmware, host tools, tests, and more.
 
 ## Phase 1
+To restate the goal of phase 1, I want to get a prototype going that demonstrates
+the basic functionality that electronode will offer. To that end, I will take
+advantage of pre-existing platforms and tooling.
 
-Default target:
-
+- Zephyr will be used for the underlying OS and library ecosystem
+   - aside from being an RTOS, it comes with a BLE stack along with many OS
+     niceties (e.g., logging, configurable board overlays, etc.)
+   - supports QEMU emulation for good "HIL"-like automated testing
+   - it has a Linux system programming feel to it, which I like
+   - super well documented
+   - supports the production-grade bluetooth hardware options out there
+- MCU/module: `BGM220PC22HNA` module with EFR32BG22 SoC
 - Board: Silicon Labs BGM220 Explorer Kit (`BGM220-EK4314A`)
 - Zephyr board target: `bgm220_ek4314a`
-- MCU/module: `BGM220PC22HNA` module with EFR32BG22 SoC
 
 Initial firmware responsibilities:
 

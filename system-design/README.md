@@ -4,24 +4,24 @@ This directory tracks the system architecture for `electronode`.
 
 The electronodes are essentially a 3-component system:
 
-1. the electrode: senses the muscle electrical activity and produces a faint
-                  corresponding voltage
-2. the amplifier: amplifies the faint signal from the electrode to a quality
-                  signal that ADCs can sample
-3. the MCU: controls the sampling and broadcasts the data wirelessly
+1. the **electrode**: senses the muscle electrical activity and produces a faint
+                      corresponding voltage
+2. the **amplifier**: amplifies the faint signal from the electrode to a quality
+                      signal that ADCs can sample
+3. the **MCU**: controls the sampling and broadcasts the data wirelessly
 
 
 ## Phase 1 Baseline
 
-Goal: demonstrate a small wireless node that samples muscle activity and motion,
-      then broadcast usable data over BLE.
+**Goal**: demonstrate a small wireless node that samples muscle activity and motion,
+          then broadcast usable data over BLE.
 
 Initial signal path:
 
 ```text
-surface electrodes -> MyoWare 2.0 EMG front end -> BGM220 Explorer ADC
-IMU -> BGM220 Explorer I2C/SPI
-BGM220 Explorer -> BLE stream -> host tools
+- surface electrodes -> MyoWare 2.0 EMG front end -> BGM220 Explorer ADC
+- IMU -> BGM220 Explorer I2C/SPI
+- BGM220 Explorer -> BLE stream -> host tools
 ```
 
 Initial choices:
@@ -29,7 +29,7 @@ Initial choices:
 - EMG: MyoWare 2.0 envelope output first
 - Motion: low-power IMU on I2C/SPI (probably Bosch BMI270)
 - MCU/radio: Silicon Labs BGM220 Explorer Kit
-- Firmware: Zephyr
+- Firmware: Zephyr application
 - Data: timestamped EMG envelope samples plus IMU samples
 
 ## Design Principles
