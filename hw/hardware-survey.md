@@ -43,19 +43,29 @@ measurement, and basic usability.
 ## MCU / SoC / SoM
 
 - Silicon Labs BGM220 Explorer Kit: good Phase 1 option
-  - BG22-based (so low-power, solid vendor)
-  - module-oriented
+  - BG22-based (so, low-power, BLE-only)
+  - SoM (so I don't have to design the RF)
   - low-cost
-  - supported by Zephyr as `bgm220_ek4314a`.
+  - commercially popular, and well-polished
+  - supported by Zephyr as `bgm220_ek4314a`
+  - Silicon Labs would be strong for Zigbee/Thread (good maturity)
+  - ARM-Cortex M33 (so, arguably the more modern IoT core /w TrustZone vs M4)
 
 - Silicon Labs EFR32BG22 custom SoC design: potential future option
-  - BGM220 is basically this but with all the RF integrated
-  - could be an option if RF integration cost, size, or layout control outweigh
-    module certification convenience
+  - this is the SoC inside the BM220 SoM
+  - could be an option if I'm really gung-ho on designing my own RF circuitry
 
 - Nordic nRF52840: strong candidate
-  - mature BLE SoC with strong ecosystem and more memory
-  - but I kinda wanna try Silicon Labs...
+  - mature BLE SoC
+  - strong ecosystem
+  - more memory than the EFR32BG22
+  - multi-protocol (Thread, Zigbee)
+  - very popular in hobby, research, and commercial products
+  - ARM-Cortex M4
+
+- STM32WB
+  - TODO
+  - Less mature than Silicon Labs / Nordic, but ST's a strong a player overall
 
 - Nordic nRF54L15:
   - strong future low-power BLE candidate
