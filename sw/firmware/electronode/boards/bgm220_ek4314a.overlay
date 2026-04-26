@@ -1,0 +1,7 @@
+/*
+ * Phase 1 board overlay placeholder.
+ *
+ * Add the MyoWare ADC input and IMU I2C/SPI wiring here once the Explorer Kit
+ * pins are chosen. Keeping pin choices out of C code lets the same app move to
+ * custom hardware later with a different board overlay.
+ */

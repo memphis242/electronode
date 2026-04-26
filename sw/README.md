@@ -25,3 +25,18 @@ Initial firmware responsibilities:
 - Timestamp samples on-device
 - Advertise or stream compact sample packets over BLE
 - Expose basic battery and firmware version metadata once power hardware exists
+
+## Firmware Directory Structure
+
+The initial Zephyr electronode app lives in `firmware/electronode/`. Other apps
+that will come will include a bootloader application under `firmware/bootloader/`
+and possibly other related apps.
+
+It is organized around a supervisor, acquisition producers, processing consumers,
+and a BLE transport boundary.
+
+Build from a Zephyr workspace with:
+
+```sh
+west build -b bgm220_ek4314a sw/firmware/electronode
+```
